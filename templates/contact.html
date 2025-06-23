@@ -1,0 +1,30 @@
+<!-- contact.html -->
+{% extends 'layout.html' %}
+{% block content %}
+<section class="contact">
+  <h1>Contact Us</h1>
+  <form method="post" action="{{ url_for('contact') }}">
+    <label>
+      Name<br>
+      <input type="text" name="name" required>
+    </label>
+    <label>
+      Email<br>
+      <input type="email" name="email" required>
+    </label>
+    <label>
+      Message<br>
+      <textarea name="message" required></textarea>
+    </label>
+    <!-- honeypot  -->
+    <div style="display:none;" aria-hidden="true">
+      <label for="hp_contact">CAUGHT</label>
+      <input id="hp_contact" name="hp_contact" type="text" tabindex="-1" autocomplete="off">
+    </div>
+    <button type="submit">Send</button>
+  </form>
+  {% if msg %}
+    <p class="message">{{ msg }}</p>
+  {% endif %}
+</section>
+{% endblock %}

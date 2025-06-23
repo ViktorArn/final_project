@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+{% block content %}
+<section class="portfolio">
+  <h1>Portfolio</h1>
+  <div class="grid">
+    {# First 3 items #}
+    {% for i in range(1, 4) %}
+      <div class="grid-item">
+        <img 
+          src="{{ url_for('static', filename='images/ps' ~ i ~ '.png') }}"
+          alt="Project {{ i }}"
+        >
+      </div>
+    {% endfor %}
+
+    {# Next 3 items #}
+    {% for j in range(1, 4) %}
+      <div class="grid-item">
+        <img 
+          src="{{ url_for('static', filename='images/c' ~ j ~ '.png') }}"
+          alt="Other Project {{ j }}"
+        >
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+
+  <div class="carousel-container">
+    <i class="bi bi-arrow-right" id="nextBtn"></i>
+    <i class="bi bi-arrow-left" id="prevBtn"></i>
+    <div class="carousel-slide">
+      <img src="{{ url_for('static', filename='images/p4.png') }}" id="lastClone" alt="the clone of the last image so it loops">
+      <img src="{{ url_for('static', filename='images/p1.png') }}" alt="the first version of poster aka p1">
+      <img src="{{ url_for('static', filename='images/p2.png') }}" alt="poster number 2">
+      <img src="{{ url_for('static', filename='images/p3.png') }}" alt="the poster 3 music box"> 
+      <img src="{{ url_for('static', filename='images/p4.png') }}" alt="poster with gradient">
+      <img src="{{ url_for('static', filename='images/p1.png') }}" id="firstClone" alt="clone of p1"> 
+    </div>
+  </div>
+
+  <div class="carousel-container2">
+    <i class="bi bi-arrow-right" id="nextBtn2"></i>
+    <i class="bi bi-arrow-left" id="prevBtn2"></i>
+    <div class="carousel-slide2">
+      <img src="{{ url_for('static', filename='images/wl.png') }}" id="lastClone2" alt="clone of last wine lable">
+      <img src="{{ url_for('static', filename='images/w1.png') }}" alt="red wine design">
+      <img src="{{ url_for('static', filename='images/w2.png') }}" alt="rose wine design">
+      <img src="{{ url_for('static', filename='images/w3.png') }}" alt="white wine design"> 
+      <img src="{{ url_for('static', filename='images/w4.png') }}" alt="sparkling wine design"> 
+      <img src="{{ url_for('static', filename='images/wl.png') }}" alt="sparkling wine close up">
+      <img src="{{ url_for('static', filename='images/w1.png') }}" id="firstClone2" alt="clone of the first design"> 
+    </div>
+  </div>
+  
+{% endblock %}

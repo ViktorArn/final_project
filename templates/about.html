@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<section class="about">
+  <h1 class="about__title">Who We Are</h1>
+
+  <div class="about__members">
+    <!-- Left profile -->
+    <div class="about__member">
+      <img
+        src="{{ url_for('static', filename='images/Az.jpeg') }}"
+        alt="Viktor"
+        class="about__member-image"
+      >
+      <h3 class="about__member-name">Viktor</h3>
+    </div>
+
+    <!-- Center -->
+    <div class="about__bio">
+      <p>
+        They call us a “dynamic duo,” though technically we’re just two guys (one with many delusions), Viktor and Rotkiv, who somehow survived three years of client and uni deadlines, last-minute “just one more tweak” requests, and questionable cafeteria coffee without losing our minds. Viktor is the one you’ll find shimmying up lamp posts for the perfect drone shot.<br><br>
+        Meanwhile, Rotkiv has been wage-slaving over pixels for a solid year, though don’t let that fool you into thinking he’s the junior. Armed with an unholy number of Photoshop shortcuts and an obsessive-compulsive relationship with color palettes, he can turn your scribbles on a napkin into a logo that pops so loud it might just break the sound barrier.<br><br>
+        Put us together and you get a creative cocktail, served neat, no chaser, with enough caffeine to power a small country.
+      </p>
+    </div>
+
+    <!-- Right profile -->
+    <div class="about__member">
+      <img
+        src="{{ url_for('static', filename='images/Az2.jpeg') }}"
+        alt="Rotkiv, aka Me2"
+        class="about__member-image"
+      >
+      <h3 class="about__member-name">Rotkiv</h3>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}

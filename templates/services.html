@@ -1,0 +1,27 @@
+{# templates/services.html #}
+{% extends 'layout.html' %}
+{% block content %}
+<section class="services">
+  <h1>Our Services</h1>
+  <div class="services-container">
+    {% set services = [
+      ['VIDEOGRAPHY','fa-user','PREMIUM PROFESSIONAL VIDEOGRAPHY SERVICES','ser1.png'],
+      ['DESIGNING','fa-cart-shopping','THERE TO HELP YOU OVERDESIGN EVEN THE SIMPLEST ELEMENTS','ser2.png'],
+      ['REBRANDING','fa-toolbox','BECAUSE WE CAN AND YOU NOT (EVIDENTLY IF YOU ARE HERE)','ser3.png']
+    ] %}
+    {% for name, icon, short, bg in services %}
+  <div
+    class="service-card"
+    style="background-image: url('{{ url_for('static', filename='images/' ~ bg) }}');"
+  >
+    <div class="icon-container">
+      <i class="fa-solid {{ icon }}"></i>
+    </div>
+    <h3>{{ name }}</h3>
+    <p>{{ short }}</p>
+  </div>
+{% endfor %}
+
+  </div>
+</section>
+{% endblock %}
