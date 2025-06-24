@@ -10,6 +10,8 @@ A Flask‐based single-page marketing site with:
 
 - Python 3.8+  
 - (Optional) A virtual environment
+- have a laptop, at least, not a toaster
+- check the requrements file
 
 ## 🚀 Installation
 
