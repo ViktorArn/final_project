@@ -21,7 +21,6 @@ A Flask‐based  site with:
 - Use this for NavBars, it would show you the basics of building a responsive bar: https://youtu.be/gXkqy0b4M5g?si=rMk78KOSWCMo-xI-
 - A resource for favicons, that would explain the process and syntax
 - All the resources are my personal designs and videos I made for the project, so ask me for permission before using them
-
 - have a laptop, at least, not a toaster
 - check the requrements file
 
