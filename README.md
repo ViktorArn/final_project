@@ -22,6 +22,8 @@ A Flask‐based  site with:
 - A resource for favicons, that would explain the process and syntax
 - All the resources are my personal designs and videos I made for the project, so ask me for permission before using them
 
+- have a laptop, at least, not a toaster
+- check the requrements file
 
 ## 🚀 Installation
 
