@@ -6,14 +6,14 @@ A Flask‐based single-page marketing site with:
 - Contact form + newsletter signup (SQLite + honeypot)
 - SEO blocks (title, meta, Open Graph)
 
-# Prerequisites
+## Prerequisites
 
 - Python 3.8+  
 - (Optional) A virtual environment
 - Check the requrements file
 - Have a laptop, not a toaster
 
-# Installation
+## Installation
 
 git clone https://github.com/ViktorArn/final_project.git
 cd final_project
