@@ -19,3 +19,21 @@ cd final_project
 python -m venv .venv
 source .venv/bin/activate         # on Windows use `.venv\Scripts\activate`
 pip install -r requirements.txt
+
+#The structure of the rep
+
+final_project/
+├── app.py
+├── requirements.txt
+├── README.md
+├── templates/
+│   ├── layout.html
+│   ├── index.html
+│   ├── about.html
+│   ├── services.html
+│   ├── portfolio.html
+│   └── contact.html
+└── static/
+    ├── styles.css
+    ├── main.js
+    └── images/
