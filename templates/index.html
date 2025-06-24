@@ -1,5 +1,18 @@
 <!-- index.html -->
 {% extends 'layout.html' %}
+
+{% block title %}Chicken Productions{% endblock %}
+{% block meta_description %}
+Chicken Productions is a full‐service creative agency specializing in videography, design, and rebranding—preserving your story in motion.
+{% endblock %}
+{% block extra_meta %}
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="{{ request.url }}">
+  <meta property="og:title"       content="Chicken Productions – Capturing Every Moment">
+  <meta property="og:description" content="Chicken Productions is a full‐service creative agency specializing in videography, design, and rebranding—preserving your story in motion.">
+  <meta property="og:image"       content="{{ url_for('static', filename='images/Logo chicken.jpg', _external=True) }}">
+{% endblock %}
+
 {% block content %}
 <section class="hero">
   <video

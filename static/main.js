@@ -7,37 +7,61 @@ document.querySelector('.hamburger').addEventListener('click', () => {
     menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
   });
   
-  //portfolio lightbox
-  function createLightbox(src) {
-    // Create overlay
+//Portfolio
+document.addEventListener('DOMContentLoaded', () => {
+  // 1) create & inject the modal
+  function createLightbox(src, alt = '') {
+    // build the container
     const modal = document.createElement('div');
-    modal.classList.add('modal');
+    modal.className = 'modal';                // starts hidden
     modal.innerHTML = `
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <img src="${src}" alt="">
+      <div class="modal-content" role="dialog" aria-modal="true">
+        <button class="close" aria-label="Close">&times;</button>
+        <img src="${src}" alt="${alt}">
       </div>
     `;
     document.body.appendChild(modal);
-  
-    // Close handler
-    modal.querySelector('.close').onclick = () => modal.remove();
+
+    // show it
+    modal.classList.add('open');
+    document.body.classList.add('modal-open');
+
+    // close handler
+    const remove = () => {
+      modal.remove();
+      document.body.classList.remove('modal-open');
+    };
+
+    modal.querySelector('.close').onclick = remove;
+    modal.addEventListener('click', e => {
+      if (e.target === modal) remove();
+    });
+    document.addEventListener('keyup', function esc(e) {
+      if (e.key === 'Escape') {
+        remove();
+        document.removeEventListener('keyup', esc);
+      }
+    });
   }
-  
-  // Attach to each portfolio image
-  document.querySelectorAll('.grid-item img').forEach(img => {
-    img.style.cursor = 'pointer';
-    img.addEventListener('click', () => createLightbox(img.src));
-  });
-  
+
+  // 2) attach to portfolio thumbnails
+  document
+    .querySelectorAll('.portfolio .grid-item img')
+    .forEach(img => {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', () =>
+        createLightbox(img.src, img.alt)
+      );
+    });
+});
 
 
 
-
-  // Carousel images
+// Carousel images
 
   const carouselSlide = document.querySelector('.carousel-slide');
   const carouselImages = document.querySelectorAll('.carousel-slide img');
+ 
 
 // Buttons for carousel
   const prevBtn = document.querySelector('#prevBtn');
@@ -46,11 +70,9 @@ document.querySelector('.hamburger').addEventListener('click', () => {
 let counter = 1;
 const size = carouselImages[0].clientWidth;
 
-//  `size` to fix the size of the container
 const carouselContainer = document.querySelector('.carousel-container');
 carouselContainer.style.width = size + 'px';
 
-// …rest of your carousel code…
 
 carouselSlide.style.transform = 'translateX('+ (-size * counter) + 'px)';
 
